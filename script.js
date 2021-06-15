@@ -56,15 +56,13 @@ function addFavoriteThings() {
   //   - https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement
 }
 
-<img scr='sun.jpg' id='myImage'></img>
 function replaceImage() {
   console.log('Called replaceImage()');
 
   // Change the puppy picture to a picture of your choosing
 
-  var image = documentgetElementByID('myImage');
-  image.setAttribute('scr', 'sun.jpg');
-  
+  var image = document.getElementById('picture');
+  image.setAttribute('src', 'sun.jpg');
 
   // See:
   // - https://www.tutorialrepublic.com/javascript-tutorial/javascript-dom-get-set-attributes.php
@@ -77,13 +75,16 @@ function changeCodeStatus() {
   // 1. Get a reference to <div id="codestatus">
   // 2. Create image element containing a sweet ol' meme
   // 3. Replace text in codestatus w/ image
-}
 
-let div = document.createElement('div');
-var img = new Image();
-img.scr='classic dwight.jpg';
-let div = document.querySelector('#codestatus');
-div.appendChild(img);
+  let div = document.createElement('div');
+
+  var img = new Image();
+  img.src='classic dwight.jpg';
+
+  div = document.querySelector('#codestatus');
+  div.replaceChildren(img);
+
+}
 
 // Get a reference to the button w/ id="show-info-button"
 let showInfoButton = document.querySelector('#show-info-button');
@@ -115,7 +116,7 @@ let informationForm = document.querySelector('#information-form');
 
 // Do something when form is submitted
 informationForm.addEventListener('submit', function(event) {
-  event.preventDefault(); // You will want this here. Remove it and see what changes.
+  event.preventDefault();// You will want this here. Remove it and see what changes.
 
   console.log('Form submitted');
 
@@ -125,6 +126,8 @@ informationForm.addEventListener('submit', function(event) {
 
   // Google things like:
   //   javascript form element get values
+  var information = document.getElementByClass('form-group').value;
+
 });
 
 /*************************************
