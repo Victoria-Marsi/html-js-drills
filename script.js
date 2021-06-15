@@ -15,14 +15,14 @@
  */
 
 function addName() {
-  console.log('addName() ran');
+  console.log('addName(nameHere) ran');
 
   // See:
   // - https://www.digitalocean.com/community/tutorials/js-innertext-and-innerhtml
   // - https://www.w3schools.com/jsref/prop_node_innertext.asp
 
   let nameElement = document.querySelector('#name');
-  nameElement.innerText = 'See script.js!';
+  nameElement.innerText = 'Victoria Marsicovetere';
 }
 
 function addFavoriteThings() {
@@ -32,16 +32,39 @@ function addFavoriteThings() {
   // 2. Create a few list items representing your favorite things
   // 3. Add them to append them to favthings
 
+  let li = document.createElement('li');
+  li.innerHTML = 'All things coffee';
+
+  let li2 = document.createElement('li');
+  li2.innerHTML = 'Animals';
+
+  let li3 = document.createElement('li');
+  li3.innerHTML = 'Finding a good show on Netflix';
+
+    let favoriteThings = document.querySelector('#favthings');
+    favoriteThings.appendChild(li);
+    favoriteThings.appendChild(li2);
+    favoriteThings.appendChild(li3);
+
+
+
+
+
   // See:
   //   - https://htmldog.com/guides/javascript/advanced/creatingelements/
   //   - https://www.javascripttutorial.net/javascript-dom/javascript-createelement/
   //   - https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement
 }
 
+<img scr='sun.jpg' id='myImage'></img>
 function replaceImage() {
   console.log('Called replaceImage()');
 
   // Change the puppy picture to a picture of your choosing
+
+  var image = documentgetElementByID('myImage');
+  image.setAttribute('scr', 'sun.jpg');
+  
 
   // See:
   // - https://www.tutorialrepublic.com/javascript-tutorial/javascript-dom-get-set-attributes.php
@@ -55,6 +78,12 @@ function changeCodeStatus() {
   // 2. Create image element containing a sweet ol' meme
   // 3. Replace text in codestatus w/ image
 }
+
+let div = document.createElement('div');
+var img = new Image();
+img.scr='classic dwight.jpg';
+let div = document.querySelector('#codestatus');
+div.appendChild(img);
 
 // Get a reference to the button w/ id="show-info-button"
 let showInfoButton = document.querySelector('#show-info-button');
