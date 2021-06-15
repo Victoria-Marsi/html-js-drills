@@ -118,6 +118,21 @@ let informationForm = document.querySelector('#information-form');
 informationForm.addEventListener('submit', function(event) {
   event.preventDefault();// You will want this here. Remove it and see what changes.
 
+  let info1 = document.getElementById('fname').value;
+  let info2 = document.getElementById('lname').value;
+  let info3 = document.getElementById('cars').value;
+  let info4 =document.querySelector('input[name="icecream"]:checked').value;
+  let info5 = document.getElementById('humancheck').value;
+  let info6 = document.getElementById('codercheck').value;
+
+  document.querySelector("#firstname").innerHTML = info1;
+  document.querySelector("#lastname").innerHTML = info2;
+  document.querySelector("#chosencar").innerHTML = info3;
+  document.querySelector("#icecreamstatus").innerHTML = info4;
+  document.querySelector("#checks").innerHTML = info5;
+  document.querySelector("#checks").innerHTML = info6;
+
+
   console.log('Form submitted');
 
   // Your job:
@@ -126,7 +141,6 @@ informationForm.addEventListener('submit', function(event) {
 
   // Google things like:
   //   javascript form element get values
-  var information = document.getElementByClass('form-group').value;
 
 });
 
