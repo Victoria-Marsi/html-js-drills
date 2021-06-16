@@ -202,8 +202,15 @@ document.addEventListener('keydown', function(logKey, r) {
  *   Add a delete button next to each item and allow it to delete the item
  *   it is next to.
  */
+ let submit = document.querySelector(".btn-primary");
+ let rightSide = document.querySelector("#todos");
 
-// Your code goes here
+submit.addEventListener('click', function(event) {
+  let input = document.querySelector("#todo");
+  rightSide.innerHTML = input.value;
+  
+// todos not showing up
+});
 
 /****************************************
  * Section 5 - setInterval + setTimeout *
@@ -221,8 +228,13 @@ document.addEventListener('keydown', function(logKey, r) {
  *   - https://javascript.info/settimeout-setinterval
  *
  */
+// keep messing around to get seconds to display
+let seconds = today.getSeconds();
+function counting() {
+  setInterval(counting, 1000);
+  document.querySelector('#seconds').innerHTML = seconds;
+}
 
-// Your code goes here
 
 /****************************************
  * Section 6 - Your own section!        *
