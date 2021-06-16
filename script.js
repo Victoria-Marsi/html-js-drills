@@ -122,16 +122,18 @@ informationForm.addEventListener('submit', function(event) {
   let info2 = document.getElementById('lname').value;
   let info3 = document.getElementById('cars').value;
   let info4 =document.querySelector('input[name="icecream"]:checked').value;
-  // let info5 = document.querySelectorAll('input[type="checkbox"]:checked').value;
-  let info5 = document.getElementById('humancheck').value;
-  let info6 = document.getElementById('codercheck').value;
+  let info5 = document.getElementById("humancheck").checked;
+  let info6 = document.getElementById("codercheck").checked;
+  // let info5 = document.getElementById('humancheck').value;
+  // let info6 = document.getElementById('codercheck').value;
+  console.log(info5);
+  console.log(info6);
 
   document.querySelector("#firstname").innerHTML = info1;
   document.querySelector("#lastname").innerHTML = info2;
   document.querySelector("#chosencar").innerHTML = info3;
   document.querySelector("#icecreamstatus").innerHTML = info4;
-  document.querySelector("#checks").innerHTML = info5;
-  document.querySelector("#checks").innerHTML = info6;
+  document.querySelector("#checks").innerHTML = info5 + info6;
 
   // checks not showing up
 
@@ -176,8 +178,10 @@ makeBlueButton.addEventListener('click', function() {
 
 // Adding an event listener to document means the "keydown" event
 // can happen anywhere on the page and we'll respond.
-document.addEventListener('keydown', function(logKey, r) {
-  document.getElementById('colorText').style.color = 'red';
+document.addEventListener('keydown', function(logKey, r) { 
+  if (event.keyCode == 82){
+    document.getElementById('colorText').style.color = 'red';
+  }
   // This is called whenever a user pressed any key.
 
   // Your job:
@@ -188,8 +192,10 @@ document.addEventListener('keydown', function(logKey, r) {
   // - https://developer.mozilla.org/en-US/docs/Web/API/Document/keydown_event
   // - https://javascript.info/keyboard-events
 });
-document.addEventListener('keyup', function(logKey, p) {
-  document.getElementById('name').style.color = 'purple';
+document.addEventListener('keydown', function(logKey, p) { 
+  if (event.keyCode == 80){
+    document.getElementById('name').style.color = 'purple';
+  }
 });
 
 /*************************************
@@ -206,21 +212,16 @@ document.addEventListener('keyup', function(logKey, p) {
  *   Add a delete button next to each item and allow it to delete the item
  *   it is next to.
  */
- let submit = document.querySelector(".btn-primary");
+ let submit = document.querySelector(".form");
  let rightSide = document.querySelector("#todos");
 
-//  create a li element and use the appendChild method
-console.log(rightSide)
-submit.addEventListener('click', function(event) {
+submit.addEventListener('submit', function(event) {
+  event.preventDefault();
   let input = document.querySelector('#todo').value;
-  console.log(document.querySelector('#todo'))
   let li = document.createElement('li');
   li.innerText = input;
   rightSide.appendChild(li);
   
-  
-// todos not showing up on right side
-// help getting the right input value 
 });
 
 /****************************************
