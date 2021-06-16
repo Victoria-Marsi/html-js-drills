@@ -209,7 +209,7 @@ document.addEventListener('keydown', function(logKey, r) {
  let rightSide = document.querySelector("#todos");
 
 submit.addEventListener('click', function(event) {
-  let input = document.querySelector("#todo");
+  let input = document.querySelector(".form-control");
   rightSide.innerHTML = input.value;
   
 // todos not showing up on right side
