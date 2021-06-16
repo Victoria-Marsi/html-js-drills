@@ -232,7 +232,7 @@ submit.addEventListener('click', function(event) {
  *
  */
 
-// keep messing around to get seconds to display
+// How do I get the timer displayed?
 let seconds = today.getSeconds();
 function counting() {
   setInterval(counting, 1000);
