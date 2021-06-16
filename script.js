@@ -232,12 +232,21 @@ submit.addEventListener('click', function(event) {
  *
  */
 
-// How do I get the timer displayed?
-let seconds = today.getSeconds();
-function counting() {
-  setInterval(counting, 1000);
-  document.querySelector('#seconds').innerHTML = seconds;
+let seconds = 0;
+let el = document.querySelector('#seconds');
+
+function incrementSeconds() {
+    seconds += 1;
+    el.innerHTML = seconds;
 }
+
+setInterval(incrementSeconds, 1000);
+
+function message() {
+  document.querySelector('#delayedDisplay').innerHTML = '5 seconds have passed';
+}
+
+setTimeout(message, 5000);
 
 
 /****************************************
