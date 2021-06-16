@@ -269,7 +269,7 @@ setTimeout(message, 5000);
  *
  */
  function myFunction() {
-  document.getElementById("chosencar").innerHTML += "This is my mouseover!";
+  document.getElementById("delayedDisplay").innerHTML += "This is my mouseover!";
  }
 
 document.addEventListener("mouseover", myFunction);
