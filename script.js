@@ -175,7 +175,8 @@ makeBlueButton.addEventListener('click', function() {
 
 // Adding an event listener to document means the "keydown" event
 // can happen anywhere on the page and we'll respond.
-document.addeventListener('keydown', function() {
+document.addEventListener('keydown', function(logKey, r) {
+  document.getElementById('colorText').style.color = 'red';
   // This is called whenever a user pressed any key.
 
   // Your job:
