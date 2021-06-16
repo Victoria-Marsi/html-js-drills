@@ -133,6 +133,7 @@ informationForm.addEventListener('submit', function(event) {
   document.querySelector("#checks").innerHTML = info5;
   // document.querySelector("#checks").innerHTML = info6;
 
+  // checks not showing up
 
   console.log('Form submitted');
 
@@ -179,6 +180,8 @@ document.addEventListener('keydown', function(logKey, r) {
   document.getElementById('colorText').style.color = 'red';
   // This is called whenever a user pressed any key.
 
+  //make my own keybind
+
   // Your job:
   //  1. Turn colorText red whenever a user presses the 'r' key
   //  2. Add your own keybind somewhere
@@ -209,7 +212,7 @@ submit.addEventListener('click', function(event) {
   let input = document.querySelector("#todo");
   rightSide.innerHTML = input.value;
   
-// todos not showing up
+// todos not showing up on right side
 });
 
 /****************************************
@@ -228,6 +231,7 @@ submit.addEventListener('click', function(event) {
  *   - https://javascript.info/settimeout-setinterval
  *
  */
+
 // keep messing around to get seconds to display
 let seconds = today.getSeconds();
 function counting() {
