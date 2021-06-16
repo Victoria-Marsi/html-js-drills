@@ -122,16 +122,16 @@ informationForm.addEventListener('submit', function(event) {
   let info2 = document.getElementById('lname').value;
   let info3 = document.getElementById('cars').value;
   let info4 =document.querySelector('input[name="icecream"]:checked').value;
-  let info5 = document.querySelectorAll('input[type="checkbox"]:checked').value;
-  // let info5 = document.getElementById('humancheck').value;
-  // let info6 = document.getElementById('codercheck').value;
+  // let info5 = document.querySelectorAll('input[type="checkbox"]:checked').value;
+  let info5 = document.getElementById('humancheck').value;
+  let info6 = document.getElementById('codercheck').value;
 
   document.querySelector("#firstname").innerHTML = info1;
   document.querySelector("#lastname").innerHTML = info2;
   document.querySelector("#chosencar").innerHTML = info3;
   document.querySelector("#icecreamstatus").innerHTML = info4;
   document.querySelector("#checks").innerHTML = info5;
-  // document.querySelector("#checks").innerHTML = info6;
+  document.querySelector("#checks").innerHTML = info6;
 
   // checks not showing up
 
@@ -180,8 +180,6 @@ document.addEventListener('keydown', function(logKey, r) {
   document.getElementById('colorText').style.color = 'red';
   // This is called whenever a user pressed any key.
 
-  //make my own keybind
-
   // Your job:
   //  1. Turn colorText red whenever a user presses the 'r' key
   //  2. Add your own keybind somewhere
@@ -189,6 +187,9 @@ document.addEventListener('keydown', function(logKey, r) {
   // See:
   // - https://developer.mozilla.org/en-US/docs/Web/API/Document/keydown_event
   // - https://javascript.info/keyboard-events
+});
+document.addEventListener('keyup', function(logKey, p) {
+  document.getElementById('name').style.color = 'purple';
 });
 
 /*************************************
@@ -208,11 +209,18 @@ document.addEventListener('keydown', function(logKey, r) {
  let submit = document.querySelector(".btn-primary");
  let rightSide = document.querySelector("#todos");
 
+//  create a li element and use the appendChild method
+console.log(rightSide)
 submit.addEventListener('click', function(event) {
-  let input = document.querySelector(".form-control");
-  rightSide.innerHTML = input.value;
+  let input = document.querySelector('#todo').value;
+  console.log(document.querySelector('#todo'))
+  let li = document.createElement('li');
+  li.innerText = input;
+  rightSide.appendChild(li);
+  
   
 // todos not showing up on right side
+// help getting the right input value 
 });
 
 /****************************************
@@ -260,5 +268,8 @@ setTimeout(message, 5000);
  *   Click on each event listener to see an example of how it is used
  *
  */
+ function myFunction() {
+  document.getElementById("chosencar").innerHTML += "This is my mouseover!";
+ }
 
-// Your code goes here
+document.addEventListener("mouseover", myFunction);
