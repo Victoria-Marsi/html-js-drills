@@ -122,15 +122,16 @@ informationForm.addEventListener('submit', function(event) {
   let info2 = document.getElementById('lname').value;
   let info3 = document.getElementById('cars').value;
   let info4 =document.querySelector('input[name="icecream"]:checked').value;
-  let info5 = document.getElementById('humancheck').value;
-  let info6 = document.getElementById('codercheck').value;
+  let info5 = document.querySelectorAll('input[type="checkbox"]:checked').value;
+  // let info5 = document.getElementById('humancheck').value;
+  // let info6 = document.getElementById('codercheck').value;
 
   document.querySelector("#firstname").innerHTML = info1;
   document.querySelector("#lastname").innerHTML = info2;
   document.querySelector("#chosencar").innerHTML = info3;
   document.querySelector("#icecreamstatus").innerHTML = info4;
   document.querySelector("#checks").innerHTML = info5;
-  document.querySelector("#checks").innerHTML = info6;
+  // document.querySelector("#checks").innerHTML = info6;
 
 
   console.log('Form submitted');
@@ -157,15 +158,16 @@ informationForm.addEventListener('submit', function(event) {
 // then log something to the console
 
 // Fill in ________ to get a reference to the correct button on the page
-let consoleLogButton = document.querySelector('#________');
+let consoleLogButton = document.querySelector('#console-log-button');
 
 // Log something when that button is clicked
 consoleLogButton.addEventListener('click', function() {
-  console.log('Change this text if you want!');
+  console.log('We did it!');
 });
 
-let makeBlueButton = document.querySelector('#________');
+let makeBlueButton = document.querySelector('#make-blue-button');
 makeBlueButton.addEventListener('click', function() {
+  document.getElementById('colorText').style.color = 'blue';
   // Your job:
   //  1. When a user clicks "Change the text to the right blue"
   //  2. Change the text in <div id="colorText">...</div> to blue
