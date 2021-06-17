@@ -133,6 +133,14 @@ informationForm.addEventListener('submit', function (event) {
   document.querySelector("#icecreamstatus").innerHTML = info4;
   document.querySelector("#checks").innerHTML = info5 + info6;
 
+  //This is an alternmate way to get the data 
+  //const formData = new FormData(event.target);
+  //const formProps = Object.fromEntries(form);
+  //This displays the data to the right
+  // document.getElementById('chosencar').innerHTML = formProps.cars
+  //let humanCheck = document.querySelector('#humancheck).checked;
+  //document.querySelector('#checks).innerHTML = `$(humanCheck) $(coderCheck)`;
+
   console.log('Form submitted');
 
   // Your job:
@@ -219,6 +227,7 @@ submit.addEventListener('submit', function (event) {
   rightSide.appendChild(li);
 
 });
+
 
 /****************************************
  * Section 5 - setInterval + setTimeout *
