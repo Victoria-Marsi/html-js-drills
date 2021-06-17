@@ -41,10 +41,10 @@ function addFavoriteThings() {
   let li3 = document.createElement('li');
   li3.innerHTML = 'Finding a good show on Netflix';
 
-    let favoriteThings = document.querySelector('#favthings');
-    favoriteThings.appendChild(li);
-    favoriteThings.appendChild(li2);
-    favoriteThings.appendChild(li3);
+  let favoriteThings = document.querySelector('#favthings');
+  favoriteThings.appendChild(li);
+  favoriteThings.appendChild(li2);
+  favoriteThings.appendChild(li3);
 
 
 
@@ -79,7 +79,7 @@ function changeCodeStatus() {
   let div = document.createElement('div');
 
   var img = new Image();
-  img.src='classic dwight.jpg';
+  img.src = 'classic dwight.jpg';
 
   div = document.querySelector('#codestatus');
   div.replaceChildren(img);
@@ -90,7 +90,7 @@ function changeCodeStatus() {
 let showInfoButton = document.querySelector('#show-info-button');
 
 // Do something when showInfoButton is clicke
-showInfoButton.addEventListener('click', function() {
+showInfoButton.addEventListener('click', function () {
   console.log('Clicked "Show Info" button');
 
   // Implement addName, addFavoriteThings, replaceImage, changeCodeStatus above
@@ -115,17 +115,15 @@ showInfoButton.addEventListener('click', function() {
 let informationForm = document.querySelector('#information-form');
 
 // Do something when form is submitted
-informationForm.addEventListener('submit', function(event) {
+informationForm.addEventListener('submit', function (event) {
   event.preventDefault();// You will want this here. Remove it and see what changes.
 
   let info1 = document.getElementById('fname').value;
   let info2 = document.getElementById('lname').value;
   let info3 = document.getElementById('cars').value;
-  let info4 =document.querySelector('input[name="icecream"]:checked').value;
+  let info4 = document.querySelector('input[name="icecream"]:checked').value;
   let info5 = document.getElementById("humancheck").checked;
   let info6 = document.getElementById("codercheck").checked;
-  // let info5 = document.getElementById('humancheck').value;
-  // let info6 = document.getElementById('codercheck').value;
   console.log(info5);
   console.log(info6);
 
@@ -134,8 +132,6 @@ informationForm.addEventListener('submit', function(event) {
   document.querySelector("#chosencar").innerHTML = info3;
   document.querySelector("#icecreamstatus").innerHTML = info4;
   document.querySelector("#checks").innerHTML = info5 + info6;
-
-  // checks not showing up
 
   console.log('Form submitted');
 
@@ -164,12 +160,12 @@ informationForm.addEventListener('submit', function(event) {
 let consoleLogButton = document.querySelector('#console-log-button');
 
 // Log something when that button is clicked
-consoleLogButton.addEventListener('click', function() {
+consoleLogButton.addEventListener('click', function () {
   console.log('We did it!');
 });
 
 let makeBlueButton = document.querySelector('#make-blue-button');
-makeBlueButton.addEventListener('click', function() {
+makeBlueButton.addEventListener('click', function () {
   document.getElementById('colorText').style.color = 'blue';
   // Your job:
   //  1. When a user clicks "Change the text to the right blue"
@@ -178,8 +174,8 @@ makeBlueButton.addEventListener('click', function() {
 
 // Adding an event listener to document means the "keydown" event
 // can happen anywhere on the page and we'll respond.
-document.addEventListener('keydown', function(logKey, r) { 
-  if (event.keyCode == 82){
+document.addEventListener('keydown', function (logKey, r) {
+  if (event.keyCode == 82) {
     document.getElementById('colorText').style.color = 'red';
   }
   // This is called whenever a user pressed any key.
@@ -192,8 +188,8 @@ document.addEventListener('keydown', function(logKey, r) {
   // - https://developer.mozilla.org/en-US/docs/Web/API/Document/keydown_event
   // - https://javascript.info/keyboard-events
 });
-document.addEventListener('keydown', function(logKey, p) { 
-  if (event.keyCode == 80){
+document.addEventListener('keydown', function (logKey, p) {
+  if (event.keyCode == 80) {
     document.getElementById('name').style.color = 'purple';
   }
 });
@@ -212,16 +208,16 @@ document.addEventListener('keydown', function(logKey, p) {
  *   Add a delete button next to each item and allow it to delete the item
  *   it is next to.
  */
- let submit = document.querySelector(".form");
- let rightSide = document.querySelector("#todos");
+let submit = document.querySelector(".form");
+let rightSide = document.querySelector("#todos");
 
-submit.addEventListener('submit', function(event) {
+submit.addEventListener('submit', function (event) {
   event.preventDefault();
   let input = document.querySelector('#todo').value;
   let li = document.createElement('li');
   li.innerText = input;
   rightSide.appendChild(li);
-  
+
 });
 
 /****************************************
@@ -245,8 +241,8 @@ let seconds = 0;
 let el = document.querySelector('#seconds');
 
 function incrementSeconds() {
-    seconds += 1;
-    el.innerHTML = seconds;
+  seconds += 1;
+  el.innerHTML = seconds;
 }
 
 setInterval(incrementSeconds, 1000);
@@ -269,8 +265,8 @@ setTimeout(message, 5000);
  *   Click on each event listener to see an example of how it is used
  *
  */
- function myFunction() {
+function myFunction() {
   document.getElementById("delayedDisplay").innerHTML += "This is my mouseover!";
- }
+}
 
 document.addEventListener("mouseover", myFunction);
